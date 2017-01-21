@@ -22,10 +22,15 @@ li {
 header {
   height: 50px;
   width: 320px;
+  padding: 5px;
   background: #ccc;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+button {
+  padding: 5px;
 }
 
 .timeDisplay {
