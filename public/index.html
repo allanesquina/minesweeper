@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mineApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js" charset="utf-8"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <section ng-controller="MineController">
+        <header>
+            <button type="button" name="button" ng-click="newGame()">New Game</button>
+            <span class="timeDisplay">{{timeDisplay()}}</span>
+        </header>
+        <section id="stage">
+            <ul ng-repeat="row in matrix">
+                <li ng-repeat="col in row" class="state{{col.state}}" ng-right-click="disarm(col)" ng-click="expose(col.x, col.y)">
+                    <span ng-show="showType(col)" class="type{{col.type}}">
+                      {{col.type}}
+                    </span>
+                </li>
+            </ul>
+
+        </section>
+        <div ng-show="gameEnd">Game Over</div>
+    </section>
+
+    <script src="js/app.js" charset="utf-8"></script>
+</body>
+
+</html>
